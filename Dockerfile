@@ -15,6 +15,9 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
+RUN echo "DirectoryIndex pages/index.php" > /etc/apache2/conf-available/custom-dirindex.conf \
+    && a2enconf custom-dirindex
+
 WORKDIR /var/www/html/
 
 EXPOSE 80
