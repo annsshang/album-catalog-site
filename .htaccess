@@ -1,0 +1,9 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# If the request is an existing file or directory, serve it as is
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, route all requests to router.php
+RewriteRule ^(.*)$ router.php [QSA,L]
