@@ -18,10 +18,10 @@ $is_admin = is_user_member_of($db, ADMIN_GROUP_ID);
 
 const ROUTES = array(
   '/' => 'index.php',
-  '/albums' => 'pages/album.php',
-  '/add' => 'pages/insertform.php',
-  '/details' => 'pages/details.php',
-  '/login' => 'pages/login.php'
+  '/albums' => 'album.php',
+  '/add' => 'insertform.php',
+  '/details' => 'details.php',
+  '/login' => 'login.php'
 );
 
 function match_static($uri)
@@ -79,5 +79,5 @@ if ($php_file = match_routes($request_uri, ROUTES)) {
   http_response_code(404);
 
   // Display 404 page.
-  require 'pages/404.php';
+  require '404.php';
 }

@@ -134,7 +134,7 @@ if (isset($_POST["upload"])) {
 
         </form>
 
-        <form method="post" action="/pages/insertform.php">
+        <form method="post" action="insertform.php">
 
             <div class="label-input">
                 <label for="name_field">Album Title:</label>
