@@ -407,7 +407,7 @@ function signup_form($action, $signup_messages)
 
         <div class="label-input">
             <label for="username">Username:</label>
-            <input id="username" type="text" name="signup_username" value="<?php echo htmlspecialchars($sticky_signup_username); ?>" required />
+            <input id="username" type="text" name="signup_username" value="<?php echo htmlspecialchars($sticky_signup_username?? ''); ?>" required />
         </div>
 
         <div class="label-input">

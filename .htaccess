@@ -1,0 +1,11 @@
+DirectoryIndex router.php
+
+# Enable rewrite engine
+RewriteEngine On
+
+# If the request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, route everything through router.php
+RewriteRule ^(.*)$ router.php [QSA,L]
