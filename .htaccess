@@ -1,11 +1,9 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+# Enable rewrite engine
+RewriteEngine On
 
-    # Set home.php as default DirectoryIndex
-    DirectoryIndex home.php
+# If the request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Route all requests that are not real files/folders to router.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ router.php [QSA,L]
-</IfModule>
+# Otherwise, route everything through router.php
+RewriteRule ^(.*)$ router.php [QSA,L]
